@@ -795,7 +795,7 @@ $color-toolbar-icon: #8a8a8a;
 
 and replace `  color: #555;` (inside `.display-mode-btn`) with `  color: tk.$color-toolbar-icon;`.
 
-`src/components/MainPanel/ExportButton.scss` — replace `  color: #555;` (line 4, inside `.export-btn`) with `  color: tk.$color-toolbar-icon;` (the file already has `@use '../../styles/tokens' as tk;` on line 1).
+`src/components/MainPanel/ExportButton.scss` — insert `@use '../../styles/tokens' as tk;` plus a blank line at the top (this file does **not** have it — only `MainPanel.scss` does), then replace `  color: #555;` inside `.export-btn` with `  color: tk.$color-toolbar-icon;`.
 
 `src/components/MainPanel/MainPanel.scss` — replace `  color: #555;` at line 59 (`.clear-conversation-btn`) and at line 77 (`.font-size-btn`) with `  color: tk.$color-toolbar-icon;` (the file already has the `@use` on line 1). Leave every `background: #555` and `border: … #555` alone.
 
