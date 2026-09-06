@@ -86,4 +86,24 @@ describe('shouldShowItem', () => {
     expect(shouldShowItem(item, 'source', 'source')).toBe(true);
     expect(shouldShowItem(item, 'translation', 'translation')).toBe(true);
   });
+
+  it('hides both participant roles when participantMode=none', () => {
+    expect(shouldShowItem(baseItem({ source: 'participant', role: 'user' }), 'both', 'none')).toBe(false);
+    expect(shouldShowItem(baseItem({ source: 'participant', role: 'assistant' }), 'both', 'none')).toBe(false);
+  });
+
+  it('hides both speaker roles when speakerMode=none', () => {
+    expect(shouldShowItem(baseItem({ source: 'speaker', role: 'user' }), 'none', 'both')).toBe(false);
+    expect(shouldShowItem(baseItem({ source: 'speaker', role: 'assistant' }), 'none', 'both')).toBe(false);
+  });
+
+  it('none on one side leaves the other side untouched', () => {
+    expect(shouldShowItem(baseItem({ source: 'speaker', role: 'user' }), 'both', 'none')).toBe(true);
+    expect(shouldShowItem(baseItem({ source: 'participant', role: 'assistant' }), 'none', 'both')).toBe(true);
+  });
+
+  it('error and system rows still pass when their side is none', () => {
+    expect(shouldShowItem(baseItem({ source: 'participant', type: 'error' }), 'both', 'none')).toBe(true);
+    expect(shouldShowItem(baseItem({ source: 'participant', role: 'system' }), 'both', 'none')).toBe(true);
+  });
 });

@@ -16,6 +16,7 @@ const CYCLE: Record<DisplayMode, DisplayMode> = {
   both: 'source',
   source: 'translation',
   translation: 'both',
+  none: 'both',
 };
 
 const DisplayModeButton: React.FC<DisplayModeButtonProps> = ({ scope, value, onChange }) => {
