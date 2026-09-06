@@ -566,12 +566,12 @@
       "source": "原文",
       "translation": "譯文",
       "ariaLabel": "{{scope}}：{{mode}} — 點擊切換",
-      "none": "Off",
-      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
-      "legendSource": "Src: only the original speech",
-      "legendTranslation": "Trans: only the translation",
-      "legendBoth": "Both: both lines",
-      "legendNone": "Off: hide this side"
+      "none": "關閉",
+      "title": "{{scope}} — 點擊切換\n目前：{{mode}}",
+      "legendSource": "原文：僅原始語音",
+      "legendTranslation": "譯文：僅翻譯",
+      "legendBoth": "兩者：兩行都顯示",
+      "legendNone": "關閉：隱藏這一側"
     },
     "playItemAudio": "播放此項目的音訊",
     "toolbar": {

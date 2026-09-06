@@ -566,12 +566,12 @@
       "source": "Orijinal",
       "translation": "Çeviri",
       "ariaLabel": "{{scope}}: {{mode}} — değiştirmek için tıklayın",
-      "none": "Off",
-      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
-      "legendSource": "Src: only the original speech",
-      "legendTranslation": "Trans: only the translation",
-      "legendBoth": "Both: both lines",
-      "legendNone": "Off: hide this side"
+      "none": "Kapalı",
+      "title": "{{scope}} — değiştirmek için tıklayın\nGösterilen: {{mode}}",
+      "legendSource": "Orijinal: yalnızca orijinal konuşma",
+      "legendTranslation": "Çeviri: yalnızca çeviri",
+      "legendBoth": "Her ikisi: iki satır da",
+      "legendNone": "Kapalı: bu tarafı gizle"
     },
     "playItemAudio": "Bu öğenin sesini oynat",
     "toolbar": {

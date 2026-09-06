@@ -566,12 +566,12 @@
       "source": "Originale",
       "translation": "Traduzione",
       "ariaLabel": "{{scope}}: {{mode}} — clicca per cambiare",
-      "none": "Off",
-      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
-      "legendSource": "Src: only the original speech",
-      "legendTranslation": "Trans: only the translation",
-      "legendBoth": "Both: both lines",
-      "legendNone": "Off: hide this side"
+      "none": "Spento",
+      "title": "{{scope}} — clicca per cambiare\nIn mostra: {{mode}}",
+      "legendSource": "Originale: solo parlato originale",
+      "legendTranslation": "Traduzione: solo traduzione",
+      "legendBoth": "Entrambi: entrambe le righe",
+      "legendNone": "Spento: nascondi questo lato"
     },
     "playItemAudio": "Riproduci l'audio di questo elemento",
     "toolbar": {

@@ -566,12 +566,12 @@
       "source": "Оригинал",
       "translation": "Перевод",
       "ariaLabel": "{{scope}}: {{mode}} — нажмите, чтобы изменить",
-      "none": "Off",
-      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
-      "legendSource": "Src: only the original speech",
-      "legendTranslation": "Trans: only the translation",
-      "legendBoth": "Both: both lines",
-      "legendNone": "Off: hide this side"
+      "none": "Отключено",
+      "title": "{{scope}} — нажмите, чтобы изменить\nПоказано: {{mode}}",
+      "legendSource": "Оригинал: только исходная речь",
+      "legendTranslation": "Перевод: только перевод",
+      "legendBoth": "Оба: обе строки",
+      "legendNone": "Отключено: скрыть эту сторону"
     },
     "playItemAudio": "Воспроизвести аудио этого элемента",
     "toolbar": {

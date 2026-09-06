@@ -566,12 +566,12 @@
       "source": "মূল",
       "translation": "অনুবাদ",
       "ariaLabel": "{{scope}}: {{mode}} — পরিবর্তন করতে ক্লিক করুন",
-      "none": "Off",
-      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
-      "legendSource": "Src: only the original speech",
-      "legendTranslation": "Trans: only the translation",
-      "legendBoth": "Both: both lines",
-      "legendNone": "Off: hide this side"
+      "none": "বন্ধ",
+      "title": "{{scope}} — পরিবর্তন করতে ক্লিক করুন\nএখন দেখাচ্ছে: {{mode}}",
+      "legendSource": "মূল: শুধু মূল বক্তব্য",
+      "legendTranslation": "অনুবাদ: শুধু অনুবাদ",
+      "legendBoth": "উভয়: উভয় লাইন",
+      "legendNone": "বন্ধ: এই দিকটি লুকান"
     },
     "playItemAudio": "এই আইটেমের অডিও চালান",
     "toolbar": {

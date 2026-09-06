@@ -566,12 +566,12 @@
       "source": "Orihinal",
       "translation": "Salin",
       "ariaLabel": "{{scope}}: {{mode}} — i-click para baguhin",
-      "none": "Off",
-      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
-      "legendSource": "Src: only the original speech",
-      "legendTranslation": "Trans: only the translation",
-      "legendBoth": "Both: both lines",
-      "legendNone": "Off: hide this side"
+      "none": "Patay",
+      "title": "{{scope}} — i-click para baguhin\nIpinapakita: {{mode}}",
+      "legendSource": "Orihinal: orihinal na pananalita lamang",
+      "legendTranslation": "Salin: salin lamang",
+      "legendBoth": "Parehas: parehong linya",
+      "legendNone": "Patay: itago ang panig na ito"
     },
     "playItemAudio": "I-play ang audio ng item na ito",
     "toolbar": {

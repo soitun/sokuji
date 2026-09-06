@@ -566,12 +566,12 @@
       "source": "మూలం",
       "translation": "అనువాదం",
       "ariaLabel": "{{scope}}: {{mode}} — మార్చడానికి క్లిక్ చేయండి",
-      "none": "Off",
-      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
-      "legendSource": "Src: only the original speech",
-      "legendTranslation": "Trans: only the translation",
-      "legendBoth": "Both: both lines",
-      "legendNone": "Off: hide this side"
+      "none": "ఆఫ్",
+      "title": "{{scope}} — మార్చడానికి క్లిక్ చేయండి\nఇప్పుడు: {{mode}}",
+      "legendSource": "మూలం: అసలు ప్రసంగం మాత్రమే",
+      "legendTranslation": "అనువాదం: అనువాదం మాత్రమే",
+      "legendBoth": "రెండూ: రెండు వరుసలు",
+      "legendNone": "ఆఫ్: ఈ వైపును దాచు"
     },
     "playItemAudio": "ఈ అంశం యొక్క ఆడియోను ప్లే చేయండి",
     "toolbar": {

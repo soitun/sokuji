@@ -566,12 +566,12 @@
       "source": "Lähde",
       "translation": "Käännös",
       "ariaLabel": "{{scope}}: {{mode}} — vaihda napsauttamalla",
-      "none": "Off",
-      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
-      "legendSource": "Src: only the original speech",
-      "legendTranslation": "Trans: only the translation",
-      "legendBoth": "Both: both lines",
-      "legendNone": "Off: hide this side"
+      "none": "Pois",
+      "title": "{{scope}} — vaihda napsauttamalla\nNäytetään: {{mode}}",
+      "legendSource": "Lähde: vain alkuperäinen puhe",
+      "legendTranslation": "Käännös: vain käännös",
+      "legendBoth": "Molemmat: molemmat rivit",
+      "legendNone": "Pois: piilota tämä puoli"
     },
     "playItemAudio": "Toista tämän kohteen ääni",
     "toolbar": {

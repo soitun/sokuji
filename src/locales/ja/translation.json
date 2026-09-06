@@ -566,12 +566,12 @@
       "source": "原文",
       "translation": "訳文",
       "ariaLabel": "{{scope}}: {{mode}} — クリックで切替",
-      "none": "Off",
-      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
-      "legendSource": "Src: only the original speech",
-      "legendTranslation": "Trans: only the translation",
-      "legendBoth": "Both: both lines",
-      "legendNone": "Off: hide this side"
+      "none": "オフ",
+      "title": "{{scope}} — クリックで切替\n現在の表示: {{mode}}",
+      "legendSource": "原文: 元の発話のみ",
+      "legendTranslation": "訳文: 翻訳のみ",
+      "legendBoth": "両方: 両方の行",
+      "legendNone": "オフ: この側を非表示"
     },
     "playItemAudio": "この項目の音声を再生",
     "toolbar": {

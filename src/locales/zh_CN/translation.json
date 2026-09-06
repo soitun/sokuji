@@ -566,12 +566,12 @@
       "source": "原文",
       "translation": "译文",
       "ariaLabel": "{{scope}}：{{mode}} — 点击切换",
-      "none": "Off",
-      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
-      "legendSource": "Src: only the original speech",
-      "legendTranslation": "Trans: only the translation",
-      "legendBoth": "Both: both lines",
-      "legendNone": "Off: hide this side"
+      "none": "关闭",
+      "title": "{{scope}} — 点击切换\n当前：{{mode}}",
+      "legendSource": "原文：仅原始语音",
+      "legendTranslation": "译文：仅翻译",
+      "legendBoth": "两者：两行都显示",
+      "legendNone": "关闭：隐藏这一侧"
     },
     "playItemAudio": "播放此条音频",
     "toolbar": {

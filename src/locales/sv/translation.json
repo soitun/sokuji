@@ -566,12 +566,12 @@
       "source": "Källa",
       "translation": "Översättning",
       "ariaLabel": "{{scope}}: {{mode}} — klicka för att ändra",
-      "none": "Off",
-      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
-      "legendSource": "Src: only the original speech",
-      "legendTranslation": "Trans: only the translation",
-      "legendBoth": "Both: both lines",
-      "legendNone": "Off: hide this side"
+      "none": "Av",
+      "title": "{{scope}} — klicka för att ändra\nVisar nu: {{mode}}",
+      "legendSource": "Källa: endast ursprungligt tal",
+      "legendTranslation": "Översättning: endast översättning",
+      "legendBoth": "Båda: båda raderna",
+      "legendNone": "Av: dölj denna sida"
     },
     "playItemAudio": "Spela upp ljudet för detta objekt",
     "toolbar": {

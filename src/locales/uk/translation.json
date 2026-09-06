@@ -566,12 +566,12 @@
       "source": "Оригінал",
       "translation": "Переклад",
       "ariaLabel": "{{scope}}: {{mode}} — натисніть, щоб змінити",
-      "none": "Off",
-      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
-      "legendSource": "Src: only the original speech",
-      "legendTranslation": "Trans: only the translation",
-      "legendBoth": "Both: both lines",
-      "legendNone": "Off: hide this side"
+      "none": "Вимкнено",
+      "title": "{{scope}} — натисніть, щоб змінити\nПоказано: {{mode}}",
+      "legendSource": "Оригінал: лише оригінальне мовлення",
+      "legendTranslation": "Переклад: лише переклад",
+      "legendBoth": "Обидва: обидва рядки",
+      "legendNone": "Вимкнено: сховати цю сторону"
     },
     "playItemAudio": "Відтворити аудіо цього елемента",
     "toolbar": {

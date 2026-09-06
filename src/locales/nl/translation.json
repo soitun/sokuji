@@ -566,12 +566,12 @@
       "source": "Origineel",
       "translation": "Vertaling",
       "ariaLabel": "{{scope}}: {{mode}} — klik om te wijzigen",
-      "none": "Off",
-      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
-      "legendSource": "Src: only the original speech",
-      "legendTranslation": "Trans: only the translation",
-      "legendBoth": "Both: both lines",
-      "legendNone": "Off: hide this side"
+      "none": "Uit",
+      "title": "{{scope}} — klik om te wijzigen\nWordt getoond: {{mode}}",
+      "legendSource": "Origineel: alleen originele spraak",
+      "legendTranslation": "Vertaling: alleen vertaling",
+      "legendBoth": "Beide: beide regels",
+      "legendNone": "Uit: deze kant verbergen"
     },
     "playItemAudio": "Audio van dit item afspelen",
     "toolbar": {

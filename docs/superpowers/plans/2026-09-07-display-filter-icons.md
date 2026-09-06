@@ -6,7 +6,7 @@
 
 **Architecture:** `DisplayMode` gains `'none'` and `shouldShowItem` honours it; the header/avatar consequence is already handled because MainPanel computes `prevItem` from the *filtered* list (`MainPanel.tsx:4179-4184`), so a fully hidden side never renders a header. The three side icons become React components in `src/components/Icons/SideIcons.tsx` (the `ProviderIcons.tsx` precedent), with the designer's SVG files committed beside them and a drift test that proves the components reproduce the files. `DisplayModeButton` and `ModePicker` swap lucide for those components. The toolbar rest colour becomes one SCSS token used by all four toolbar button rules.
 
-**Tech Stack:** React 18 + TypeScript (strict), Zustand, i18next, SCSS via `sass`, Vitest + @testing-library/react (jsdom).
+**Tech Stack:** React 19 + TypeScript (strict), Zustand, i18next, SCSS via `sass`, Vitest + @testing-library/react (jsdom).
 
 **Spec:** https://github.com/kizuna-ai-lab/sokuji/issues/510 (sections 1–3, "Decided", "Consequence to handle", "Before it ships", "Acceptance"). Designer delivery: `~/Downloads/sokuji-icons.zip` → extracted at `$CLAUDE_JOB_DIR/tmp/designer/sokuji-icons/` (11 SVG + README.md + 3 PNG).
 

@@ -566,12 +566,12 @@
       "source": "Asal",
       "translation": "Terjemahan",
       "ariaLabel": "{{scope}}: {{mode}} — klik untuk menukar",
-      "none": "Off",
-      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
-      "legendSource": "Src: only the original speech",
-      "legendTranslation": "Trans: only the translation",
-      "legendBoth": "Both: both lines",
-      "legendNone": "Off: hide this side"
+      "none": "Mati",
+      "title": "{{scope}} — klik untuk menukar\nSedang memaparkan: {{mode}}",
+      "legendSource": "Asal: ucapan asal sahaja",
+      "legendTranslation": "Terjemahan: terjemahan sahaja",
+      "legendBoth": "Kedua-duanya: kedua-dua baris",
+      "legendNone": "Mati: sembunyikan sisi ini"
     },
     "playItemAudio": "Main audio item ini",
     "toolbar": {

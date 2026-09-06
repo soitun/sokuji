@@ -566,12 +566,12 @@
       "source": "Gốc",
       "translation": "Dịch",
       "ariaLabel": "{{scope}}: {{mode}} — nhấp để đổi",
-      "none": "Off",
-      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
-      "legendSource": "Src: only the original speech",
-      "legendTranslation": "Trans: only the translation",
-      "legendBoth": "Both: both lines",
-      "legendNone": "Off: hide this side"
+      "none": "Tắt",
+      "title": "{{scope}} — nhấp để đổi\nĐang hiện: {{mode}}",
+      "legendSource": "Gốc: chỉ giọng gốc",
+      "legendTranslation": "Dịch: chỉ bản dịch",
+      "legendBoth": "Cả hai: cả hai dòng",
+      "legendNone": "Tắt: ẩn phía này"
     },
     "playItemAudio": "Phát âm thanh của mục này",
     "toolbar": {

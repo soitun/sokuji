@@ -566,12 +566,12 @@
       "source": "ต้นฉบับ",
       "translation": "คำแปล",
       "ariaLabel": "{{scope}}: {{mode}} — คลิกเพื่อเปลี่ยน",
-      "none": "Off",
-      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
-      "legendSource": "Src: only the original speech",
-      "legendTranslation": "Trans: only the translation",
-      "legendBoth": "Both: both lines",
-      "legendNone": "Off: hide this side"
+      "none": "ปิด",
+      "title": "{{scope}} — คลิกเพื่อเปลี่ยน\nกำลังแสดง: {{mode}}",
+      "legendSource": "ต้นฉบับ: เฉพาะคำพูดต้นฉบับ",
+      "legendTranslation": "คำแปล: เฉพาะคำแปล",
+      "legendBoth": "ทั้งคู่: ทั้งสองบรรทัด",
+      "legendNone": "ปิด: ซ่อนฝั่งนี้"
     },
     "playItemAudio": "เล่นเสียงของรายการนี้",
     "toolbar": {

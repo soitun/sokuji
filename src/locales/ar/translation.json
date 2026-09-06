@@ -566,12 +566,12 @@
       "source": "الأصل",
       "translation": "الترجمة",
       "ariaLabel": "{{scope}}: {{mode}} — انقر للتغيير",
-      "none": "Off",
-      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
-      "legendSource": "Src: only the original speech",
-      "legendTranslation": "Trans: only the translation",
-      "legendBoth": "Both: both lines",
-      "legendNone": "Off: hide this side"
+      "none": "إيقاف",
+      "title": "{{scope}} — انقر للتغيير\nيظهر حاليًا: {{mode}}",
+      "legendSource": "الأصل: الكلام الأصلي فقط",
+      "legendTranslation": "الترجمة: الترجمة فقط",
+      "legendBoth": "الكل: السطران",
+      "legendNone": "إيقاف: إخفاء هذا الجانب"
     },
     "playItemAudio": "تشغيل صوت هذا العنصر",
     "toolbar": {
