@@ -565,8 +565,13 @@
       "both": "Kedua-duanya",
       "source": "Asal",
       "translation": "Terjemahan",
-      "tooltip": "{{scope}} — klik untuk menukar\nSedang memaparkan: {{mode}}\n• Asal: ucapan asal sahaja\n• Terjemahan: terjemahan sahaja\n• Kedua-duanya: kedua-dua baris",
-      "ariaLabel": "{{scope}}: {{mode}} — klik untuk menukar"
+      "ariaLabel": "{{scope}}: {{mode}} — klik untuk menukar",
+      "none": "Mati",
+      "title": "{{scope}} — klik untuk menukar\nSedang memaparkan: {{mode}}",
+      "legendSource": "Asal: ucapan asal sahaja",
+      "legendTranslation": "Terjemahan: terjemahan sahaja",
+      "legendBoth": "Kedua-duanya: kedua-dua baris",
+      "legendNone": "Mati: sembunyikan sisi ini"
     },
     "playItemAudio": "Main audio item ini",
     "toolbar": {

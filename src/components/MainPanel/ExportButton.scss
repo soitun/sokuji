@@ -1,7 +1,9 @@
+@use '../../styles/tokens' as tk;
+
 .export-btn {
   background: none;
   border: none;
-  color: #555;
+  color: tk.$color-toolbar-icon;
   cursor: pointer;
   padding: 4px;
   display: inline-flex;

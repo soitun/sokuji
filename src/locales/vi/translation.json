@@ -565,8 +565,13 @@
       "both": "Cả hai",
       "source": "Gốc",
       "translation": "Dịch",
-      "tooltip": "{{scope}} — nhấp để đổi\nĐang hiện: {{mode}}\n• Gốc: chỉ giọng gốc\n• Dịch: chỉ bản dịch\n• Cả hai: cả hai dòng",
-      "ariaLabel": "{{scope}}: {{mode}} — nhấp để đổi"
+      "ariaLabel": "{{scope}}: {{mode}} — nhấp để đổi",
+      "none": "Tắt",
+      "title": "{{scope}} — nhấp để đổi\nĐang hiện: {{mode}}",
+      "legendSource": "Gốc: chỉ giọng gốc",
+      "legendTranslation": "Dịch: chỉ bản dịch",
+      "legendBoth": "Cả hai: cả hai dòng",
+      "legendNone": "Tắt: ẩn phía này"
     },
     "playItemAudio": "Phát âm thanh của mục này",
     "toolbar": {

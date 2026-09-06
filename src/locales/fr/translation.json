@@ -565,8 +565,13 @@
       "both": "Les deux",
       "source": "Source",
       "translation": "Traduction",
-      "tooltip": "{{scope}} — cliquez pour changer\nAffiché : {{mode}}\n• Source : discours original seulement\n• Traduction : traduction seulement\n• Les deux : les deux lignes",
-      "ariaLabel": "{{scope}} : {{mode}} — cliquez pour changer"
+      "ariaLabel": "{{scope}} : {{mode}} — cliquez pour changer",
+      "none": "Arrêt",
+      "title": "{{scope}} — cliquez pour changer\nAffiché : {{mode}}",
+      "legendSource": "Source : discours original seulement",
+      "legendTranslation": "Traduction : traduction seulement",
+      "legendBoth": "Les deux : les deux lignes",
+      "legendNone": "Arrêt : masquer ce côté"
     },
     "playItemAudio": "Lire l'audio de cet élément",
     "toolbar": {

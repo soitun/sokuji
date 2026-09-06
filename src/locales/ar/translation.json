@@ -565,8 +565,13 @@
       "both": "الكل",
       "source": "الأصل",
       "translation": "الترجمة",
-      "tooltip": "{{scope}} — انقر للتغيير\nيظهر حاليًا: {{mode}}\n• الأصل: الكلام الأصلي فقط\n• الترجمة: الترجمة فقط\n• الكل: السطران",
-      "ariaLabel": "{{scope}}: {{mode}} — انقر للتغيير"
+      "ariaLabel": "{{scope}}: {{mode}} — انقر للتغيير",
+      "none": "إيقاف",
+      "title": "{{scope}} — انقر للتغيير\nيظهر حاليًا: {{mode}}",
+      "legendSource": "الأصل: الكلام الأصلي فقط",
+      "legendTranslation": "الترجمة: الترجمة فقط",
+      "legendBoth": "الكل: السطران",
+      "legendNone": "إيقاف: إخفاء هذا الجانب"
     },
     "playItemAudio": "تشغيل صوت هذا العنصر",
     "toolbar": {

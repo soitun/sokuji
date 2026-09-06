@@ -19,6 +19,9 @@ export function shouldShowItem(
   const mode = source === 'speaker' ? speakerMode : participantMode;
 
   if (mode === 'both') return true;
+  // 'none' hides the whole side. Error and system rows were let through above
+  // on purpose: a failure on a hidden side must still be visible somewhere.
+  if (mode === 'none') return false;
   if (mode === 'source') return item.role === 'user';
   if (mode === 'translation') return item.role === 'assistant';
   return true;

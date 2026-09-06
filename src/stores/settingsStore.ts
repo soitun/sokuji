@@ -95,7 +95,9 @@ export type ProviderSettingsUnion =
 // ==================== Type Definitions ====================
 
 // Conversation display mode — which half of a bilingual utterance to show
-export type DisplayMode = 'source' | 'translation' | 'both';
+// 'none' hides every row of that side. The subtitle store carries an identical
+// copy of this union (subtitleStore.ts) — change both together.
+export type DisplayMode = 'source' | 'translation' | 'both' | 'none';
 
 // Common Settings
 export interface CommonSettings {

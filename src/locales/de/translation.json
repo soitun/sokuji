@@ -565,8 +565,13 @@
       "both": "Beides",
       "source": "Original",
       "translation": "Übersetzung",
-      "tooltip": "{{scope}} — zum Ändern klicken\nAngezeigt: {{mode}}\n• Original: nur Originalsprache\n• Übersetzung: nur Übersetzung\n• Beides: beide Zeilen",
-      "ariaLabel": "{{scope}}: {{mode}} — zum Ändern klicken"
+      "ariaLabel": "{{scope}}: {{mode}} — zum Ändern klicken",
+      "none": "Aus",
+      "title": "{{scope}} — zum Ändern klicken\nAngezeigt: {{mode}}",
+      "legendSource": "Original: nur Originalsprache",
+      "legendTranslation": "Übersetzung: nur Übersetzung",
+      "legendBoth": "Beides: beide Zeilen",
+      "legendNone": "Aus: diese Seite ausblenden"
     },
     "playItemAudio": "Audio dieses Elements abspielen",
     "toolbar": {

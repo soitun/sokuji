@@ -565,8 +565,13 @@
       "both": "هر دو",
       "source": "اصلی",
       "translation": "ترجمه",
-      "tooltip": "{{scope}} — برای تغییر کلیک کنید\nاکنون نمایش: {{mode}}\n• اصلی: فقط گفتار اصلی\n• ترجمه: فقط ترجمه\n• هر دو: هر دو خط",
-      "ariaLabel": "{{scope}}: {{mode}} — برای تغییر کلیک کنید"
+      "ariaLabel": "{{scope}}: {{mode}} — برای تغییر کلیک کنید",
+      "none": "خاموش",
+      "title": "{{scope}} — برای تغییر کلیک کنید\nاکنون نمایش: {{mode}}",
+      "legendSource": "اصلی: فقط گفتار اصلی",
+      "legendTranslation": "ترجمه: فقط ترجمه",
+      "legendBoth": "هر دو: هر دو خط",
+      "legendNone": "خاموش: پنهان کردن این طرف"
     },
     "playItemAudio": "پخش صوت این مورد",
     "toolbar": {

@@ -565,8 +565,13 @@
       "both": "兩者",
       "source": "原文",
       "translation": "譯文",
-      "tooltip": "{{scope}} — 點擊切換\n目前：{{mode}}\n• 原文：僅原始語音\n• 譯文：僅翻譯\n• 兩者：兩行都顯示",
-      "ariaLabel": "{{scope}}：{{mode}} — 點擊切換"
+      "ariaLabel": "{{scope}}：{{mode}} — 點擊切換",
+      "none": "關閉",
+      "title": "{{scope}} — 點擊切換\n目前：{{mode}}",
+      "legendSource": "原文：僅原始語音",
+      "legendTranslation": "譯文：僅翻譯",
+      "legendBoth": "兩者：兩行都顯示",
+      "legendNone": "關閉：隱藏這一側"
     },
     "playItemAudio": "播放此項目的音訊",
     "toolbar": {
