@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { User, Users } from 'lucide-react';
+import { SideMeIcon, SideOtherIcon } from '../Icons/SideIcons';
 import type { DisplayMode } from '../../stores/settingsStore';
 import './DisplayModeButton.scss';
 
@@ -56,7 +56,7 @@ const DisplayModeButton: React.FC<DisplayModeButtonProps> = ({ scope, value, onC
     onChange(CYCLE[value]);
   }, [onChange, value]);
 
-  const Icon = scope === 'speaker' ? User : Users;
+  const Icon = scope === 'speaker' ? SideMeIcon : SideOtherIcon;
 
   return (
     <button
@@ -68,7 +68,7 @@ const DisplayModeButton: React.FC<DisplayModeButtonProps> = ({ scope, value, onC
       title={title}
       aria-label={ariaLabel}
     >
-      <Icon size={14} />
+      <Icon size={14} mode={value} />
       <span className="display-mode-label">{modeLabel}</span>
     </button>
   );

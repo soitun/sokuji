@@ -36,4 +36,19 @@ describe('DisplayModeButton', () => {
     // default is what ships in en/translation.json.
     expect(screen.getByRole('button').textContent).toMatch(/Off|关闭|隐藏/);
   });
+
+  it('renders the side icon for its scope with the current mode applied', () => {
+    const { container, rerender } = render(<DisplayModeButton scope="participant" value="translation" onChange={() => {}} />);
+    const svg = container.querySelector('svg')!;
+    expect(svg.getAttribute('data-icon')).toBe('side-other');
+    expect(svg.getAttribute('width')).toBe('14');
+    expect(svg.querySelector('.line-source')).toHaveAttribute('fill', 'none');
+    expect(svg.querySelector('.line-translation')).toHaveAttribute('fill', 'currentColor');
+
+    rerender(<DisplayModeButton scope="speaker" value="none" onChange={() => {}} />);
+    const me = container.querySelector('svg')!;
+    expect(me.getAttribute('data-icon')).toBe('side-me');
+    expect(me.querySelector('.line-source')).toHaveAttribute('fill', 'none');
+    expect(me.querySelector('.line-translation')).toHaveAttribute('fill', 'none');
+  });
 });
