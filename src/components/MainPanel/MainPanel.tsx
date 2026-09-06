@@ -1349,9 +1349,6 @@ const MainPanel: React.FC<MainPanelProps> = () => {
     return sum / audioData.length < threshold;
   }, []);
   
-  // Reference to track audio quality metrics
-  const audioQualityIntervalRef = useRef<NodeJS.Timeout | null>(null);
-  
   // Simple throttling for UI updates to prevent freezing
   const lastUpdateTimeRef = useRef<number>(0);
   const throttleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -1615,11 +1612,6 @@ const MainPanel: React.FC<MainPanelProps> = () => {
       setLockedMode(null);
       pendingTextRef.current = null;
 
-      // Clear audio quality tracking interval
-      if (audioQualityIntervalRef.current) {
-        clearInterval(audioQualityIntervalRef.current);
-        audioQualityIntervalRef.current = null;
-      }
 
       // setItems([]);
 
@@ -2781,21 +2773,6 @@ const MainPanel: React.FC<MainPanelProps> = () => {
         participantStreamEnded: participantStreamEndedRef.current,
       }));
 
-      // Start tracking audio quality metrics during session
-      audioQualityIntervalRef.current = setInterval(() => {
-        if (audioServiceRef.current) {
-          const recorder = audioServiceRef.current.getRecorder();
-          if (recorder && recorder.isRecording()) {
-            // Track audio quality metrics
-            trackEvent('audio_quality_metric', {
-              quality_score: 100, // Placeholder - in production this would be calculated
-              latency: 0, // Placeholder - would measure actual latency
-              echo_cancellation_enabled: true,
-              noise_suppression_enabled: true
-            });
-          }
-        }
-      }, 30000); // Every 30 seconds
     } catch (error: any) {
       // A cancel that races client construction (Start cancelled while a
       // speaker/participant connect() was in flight) makes

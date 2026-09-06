@@ -66,12 +66,6 @@ export interface AnalyticsEvents {
     change_type: 'selected' | 'connected' | 'disconnected';
     during_session: boolean;
   };
-  'audio_quality_metric': {
-    quality_score: number;
-    latency: number;
-    echo_cancellation_enabled: boolean;
-    noise_suppression_enabled: boolean;
-  };
   'audio_passthrough_toggled': {
     enabled: boolean;
     volume_level: number;
