@@ -52,9 +52,21 @@ function nameWindowsBuild(systemVersion: string): string | undefined {
   return build >= WINDOWS_11_MIN_BUILD ? 'Windows 11' : 'Windows 10';
 }
 
+/**
+ * Both routes report a readable macOS product version, so naming it is the same
+ * job on either side -- shared so the two cannot drift apart. The strings differ
+ * in precision (`getSystemVersion()` says "15.0", UA-CH says "15.0.0") and that
+ * is left alone on purpose: os_version carries the exact value for grouping, and
+ * inventing a normaliser for a human-readable label would only add a way to be
+ * wrong about a point release.
+ */
+function nameMacOs(version: string): string {
+  return `macOS ${version}`;
+}
+
 function nameHostOs(platform: string | undefined, systemVersion: string): string | undefined {
   if (platform === 'win32') return nameWindowsBuild(systemVersion);
-  if (platform === 'darwin') return `macOS ${systemVersion}`;
+  if (platform === 'darwin') return nameMacOs(systemVersion);
   // On Linux getSystemVersion() is the kernel release; naming a distro from it
   // would be invention, so the raw version stands on its own.
   return undefined;
@@ -64,6 +76,17 @@ function nameUaChWindows(platformVersion: string): string | undefined {
   const major = Number(platformVersion.split('.')[0]);
   if (!Number.isFinite(major)) return undefined;
   return major >= UA_CH_WINDOWS_11_MIN_MAJOR ? 'Windows 11' : 'Windows 10';
+}
+
+/**
+ * The browser counterpart of nameHostOs, down to which platforms stay unnamed.
+ * A macOS user on the extension must not land in a different bucket from the
+ * same user on the desktop app.
+ */
+function nameUaChOs(platform: string | undefined, platformVersion: string): string | undefined {
+  if (platform === 'Windows') return nameUaChWindows(platformVersion);
+  if (platform === 'macOS') return nameMacOs(platformVersion);
+  return undefined;
 }
 
 function osFields(version: string, name: string | undefined): OsFields {
@@ -86,7 +109,7 @@ async function readOs(): Promise<OsFields> {
       ? (await uaData.getHighEntropyValues(['platformVersion']))?.platformVersion
       : undefined;
     if (typeof version === 'string' && version !== '') {
-      return osFields(version, uaData.platform === 'Windows' ? nameUaChWindows(version) : undefined);
+      return osFields(version, nameUaChOs(uaData.platform, version));
     }
   } catch {
     // UA-CH missing or refused: the version is simply unknown, which is a

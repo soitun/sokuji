@@ -151,6 +151,31 @@ describe('collectDeviceProfile — OS version outside Electron', () => {
     expect(await collectDeviceProfile()).toMatchObject({ os_version: '10.0.0', os_name: 'Windows 10' });
   });
 
+  // A macOS user on the extension must not land in a different bucket from the
+  // same user on the desktop app, which names macOS from the Electron bridge.
+  it('names macOS from the UA-CH platform version too', async () => {
+    stubBrowser({
+      userAgentData: {
+        platform: 'macOS',
+        getHighEntropyValues: () => Promise.resolve({ platformVersion: '15.0.0' }),
+      },
+    });
+    const { collectDeviceProfile } = await loadModule();
+    expect(await collectDeviceProfile()).toMatchObject({ os_version: '15.0.0', os_name: 'macOS 15.0.0' });
+  });
+
+  it('leaves a platform it has no unambiguous name for unnamed', async () => {
+    stubBrowser({
+      userAgentData: {
+        platform: 'Linux',
+        getHighEntropyValues: () => Promise.resolve({ platformVersion: '6.17.0' }),
+      },
+    });
+    const profile = await (await loadModule()).collectDeviceProfile();
+    expect(profile.os_version).toBe('6.17.0');
+    expect('os_name' in profile).toBe(false);
+  });
+
   it('omits the OS version when UA-CH is unavailable', async () => {
     stubBrowser();
     const profile = await (await loadModule()).collectDeviceProfile();
