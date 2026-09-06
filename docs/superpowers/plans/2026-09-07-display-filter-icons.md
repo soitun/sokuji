@@ -38,7 +38,7 @@
 | `src/components/MainPanel/DisplayModeButton.tsx` | The cycling filter control — new order, `Off` label, `data-*` hooks, side icons |
 | `src/components/MainPanel/ModePicker.tsx` | Footer segment control — side icons replace lucide |
 | `src/components/Icons/SideIcons.tsx` | **New.** `SideMeIcon`, `SideOtherIcon` (mode-driven fills), `SideBothIcon` — the only owner of the path data |
-| `src/components/Icons/side/*.svg`, `README.md` | **New.** Designer's files as the source of truth; README records provenance and the `side-both` rename |
+| `src/components/Icons/side/*.svg`, `README.md` | **New.** Designer's files as the source of truth for the *geometry*; README records provenance, the `side-both` rename, and why three files rather than the eleven delivered |
 | `src/styles/_tokens.scss` | Gains `$color-toolbar-icon` |
 | `src/components/MainPanel/DisplayModeButton.scss`, `ExportButton.scss`, `MainPanel.scss` | The four toolbar rules read the token |
 | `src/components/Subtitle/SubtitleBar.scss:103-105` | Comment only — stops naming `#555` |
