@@ -565,8 +565,13 @@
       "both": "Keduanya",
       "source": "Asli",
       "translation": "Terjemahan",
-      "tooltip": "{{scope}} — klik untuk mengubah\nMenampilkan: {{mode}}\n• Asli: hanya ucapan asli\n• Terjemahan: hanya terjemahan\n• Keduanya: kedua baris",
-      "ariaLabel": "{{scope}}: {{mode}} — klik untuk mengubah"
+      "ariaLabel": "{{scope}}: {{mode}} — klik untuk mengubah",
+      "none": "Off",
+      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
+      "legendSource": "Src: only the original speech",
+      "legendTranslation": "Trans: only the translation",
+      "legendBoth": "Both: both lines",
+      "legendNone": "Off: hide this side"
     },
     "playItemAudio": "Putar audio item ini",
     "toolbar": {

@@ -565,8 +565,13 @@
       "both": "Molemmat",
       "source": "Lähde",
       "translation": "Käännös",
-      "tooltip": "{{scope}} — vaihda napsauttamalla\nNäytetään: {{mode}}\n• Lähde: vain alkuperäinen puhe\n• Käännös: vain käännös\n• Molemmat: molemmat rivit",
-      "ariaLabel": "{{scope}}: {{mode}} — vaihda napsauttamalla"
+      "ariaLabel": "{{scope}}: {{mode}} — vaihda napsauttamalla",
+      "none": "Off",
+      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
+      "legendSource": "Src: only the original speech",
+      "legendTranslation": "Trans: only the translation",
+      "legendBoth": "Both: both lines",
+      "legendNone": "Off: hide this side"
     },
     "playItemAudio": "Toista tämän kohteen ääni",
     "toolbar": {

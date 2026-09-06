@@ -565,8 +565,13 @@
       "both": "இரண்டும்",
       "source": "மூலம்",
       "translation": "மொழிபெயர்ப்பு",
-      "tooltip": "{{scope}} — மாற்ற கிளிக் செய்யவும்\nதற்போது: {{mode}}\n• மூலம்: அசல் பேச்சு மட்டும்\n• மொழிபெயர்ப்பு: மொழிபெயர்ப்பு மட்டும்\n• இரண்டும்: இரண்டு வரிகளும்",
-      "ariaLabel": "{{scope}}: {{mode}} — மாற்ற கிளிக் செய்யவும்"
+      "ariaLabel": "{{scope}}: {{mode}} — மாற்ற கிளிக் செய்யவும்",
+      "none": "Off",
+      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
+      "legendSource": "Src: only the original speech",
+      "legendTranslation": "Trans: only the translation",
+      "legendBoth": "Both: both lines",
+      "legendNone": "Off: hide this side"
     },
     "playItemAudio": "இந்த உருப்படியின் ஒலியை இயக்கவும்",
     "toolbar": {

@@ -565,8 +565,13 @@
       "both": "Ambos",
       "source": "Origen",
       "translation": "Traducción",
-      "tooltip": "{{scope}} — haz clic para cambiar\nMostrando: {{mode}}\n• Origen: solo el habla original\n• Traducción: solo la traducción\n• Ambos: ambas líneas",
-      "ariaLabel": "{{scope}}: {{mode}} — haz clic para cambiar"
+      "ariaLabel": "{{scope}}: {{mode}} — haz clic para cambiar",
+      "none": "Off",
+      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
+      "legendSource": "Src: only the original speech",
+      "legendTranslation": "Trans: only the translation",
+      "legendBoth": "Both: both lines",
+      "legendNone": "Off: hide this side"
     },
     "playItemAudio": "Reproducir el audio de este elemento",
     "toolbar": {

@@ -20,7 +20,7 @@
 - `side-both.svg`'s paths are renamed from `line-source` / `line-translation` to `side-other` / `side-me` in both the committed file and the component (#510 "Before it ships").
 - Existing stored three-mode configurations must still resolve (#510 Acceptance) — `'none'` is additive, nothing is renamed.
 - English only in code, comments and repo docs (CLAUDE.md); conventional commit messages.
-- Locale: edit `src/locales/en/translation.json` by hand, then run `node scripts/sync-locale-keys.mjs` to propagate to the other 31 locales (adds missing keys with the English value, drops keys `en` no longer has).
+- Locale: edit `src/locales/en/translation.json` by hand, then run `node scripts/sync-locale-keys.mjs` to propagate to the other 29 locales (adds missing keys with the English value, drops keys `en` no longer has).
 - Stylesheet invariants are asserted on **compiled** CSS (`compile` from `sass`), never by parsing SCSS source; selector regexes end in `(?![\w-])` (repo rule, see `SonioxVoiceSection.test.tsx:306`).
 - Tests are colocated Vitest files; run one with `npx vitest run <path>`.
 - Type gate: the repo has no `tsc` step in `build` (`vite build` only) and `npx tsc --noEmit -p tsconfig.json` reports ~311 pre-existing errors on the base commit. "Type-clean" therefore means **no errors beyond the saved baseline**: capture `tsc` output before the first change, and compare error lists with the `(line,col)` positions stripped, because any added line shifts later positions.
@@ -185,7 +185,7 @@ git commit -m "feat(display-filter): add a none display mode that hides a whole 
 **Files:**
 - Modify: `src/components/MainPanel/DisplayModeButton.tsx`
 - Modify: `src/locales/en/translation.json` (`mainPanel.displayMode` object)
-- Modify: `src/locales/*/translation.json` (31 files, by script)
+- Modify: `src/locales/*/translation.json` (29 files, by script)
 - Test: `src/components/MainPanel/DisplayModeButton.test.tsx` (new)
 
 **Interfaces:**
@@ -348,7 +348,7 @@ Keep the file's surrounding indentation as it is (`en` is hand-formatted; only t
 - [ ] **Step 5: Propagate to the other locales**
 
 Run: `node scripts/sync-locale-keys.mjs`
-Expected: it reports keys filled for 31 locales (`mainPanel.displayMode.none`, `.title`, `.legendSource`, `.legendTranslation`, `.legendBoth`, `.legendNone`) and `mainPanel.displayMode.tooltip` dropped. Verify: `grep -L '"legendNone"' src/locales/*/translation.json` prints nothing, and `grep -l '"tooltip"' src/locales/*/translation.json | xargs -r grep -c 'displayMode' | grep -v ':0' ` prints nothing.
+Expected: it reports keys filled for 29 locales (`mainPanel.displayMode.none`, `.title`, `.legendSource`, `.legendTranslation`, `.legendBoth`, `.legendNone`) and `mainPanel.displayMode.tooltip` dropped. Verify: `grep -L '"legendNone"' src/locales/*/translation.json` prints nothing, and `grep -l '"tooltip"' src/locales/*/translation.json | xargs -r grep -c 'displayMode' | grep -v ':0' ` prints nothing.
 
 - [ ] **Step 6: Run the tests**
 

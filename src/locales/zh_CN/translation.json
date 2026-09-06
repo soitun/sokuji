@@ -565,8 +565,13 @@
       "both": "两者",
       "source": "原文",
       "translation": "译文",
-      "tooltip": "{{scope}} — 点击切换\n当前：{{mode}}\n• 原文：仅原始语音\n• 译文：仅翻译\n• 两者：两行都显示",
-      "ariaLabel": "{{scope}}：{{mode}} — 点击切换"
+      "ariaLabel": "{{scope}}：{{mode}} — 点击切换",
+      "none": "Off",
+      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
+      "legendSource": "Src: only the original speech",
+      "legendTranslation": "Trans: only the translation",
+      "legendBoth": "Both: both lines",
+      "legendNone": "Off: hide this side"
     },
     "playItemAudio": "播放此条音频",
     "toolbar": {

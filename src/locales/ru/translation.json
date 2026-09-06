@@ -565,8 +565,13 @@
       "both": "Оба",
       "source": "Оригинал",
       "translation": "Перевод",
-      "tooltip": "{{scope}} — нажмите, чтобы изменить\nПоказано: {{mode}}\n• Оригинал: только исходная речь\n• Перевод: только перевод\n• Оба: обе строки",
-      "ariaLabel": "{{scope}}: {{mode}} — нажмите, чтобы изменить"
+      "ariaLabel": "{{scope}}: {{mode}} — нажмите, чтобы изменить",
+      "none": "Off",
+      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
+      "legendSource": "Src: only the original speech",
+      "legendTranslation": "Trans: only the translation",
+      "legendBoth": "Both: both lines",
+      "legendNone": "Off: hide this side"
     },
     "playItemAudio": "Воспроизвести аудио этого элемента",
     "toolbar": {

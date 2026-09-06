@@ -565,8 +565,13 @@
       "both": "ทั้งคู่",
       "source": "ต้นฉบับ",
       "translation": "คำแปล",
-      "tooltip": "{{scope}} — คลิกเพื่อเปลี่ยน\nกำลังแสดง: {{mode}}\n• ต้นฉบับ: เฉพาะคำพูดต้นฉบับ\n• คำแปล: เฉพาะคำแปล\n• ทั้งคู่: ทั้งสองบรรทัด",
-      "ariaLabel": "{{scope}}: {{mode}} — คลิกเพื่อเปลี่ยน"
+      "ariaLabel": "{{scope}}: {{mode}} — คลิกเพื่อเปลี่ยน",
+      "none": "Off",
+      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
+      "legendSource": "Src: only the original speech",
+      "legendTranslation": "Trans: only the translation",
+      "legendBoth": "Both: both lines",
+      "legendNone": "Off: hide this side"
     },
     "playItemAudio": "เล่นเสียงของรายการนี้",
     "toolbar": {

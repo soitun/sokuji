@@ -565,8 +565,13 @@
       "both": "Her ikisi",
       "source": "Orijinal",
       "translation": "Çeviri",
-      "tooltip": "{{scope}} — değiştirmek için tıklayın\nGösterilen: {{mode}}\n• Orijinal: yalnızca orijinal konuşma\n• Çeviri: yalnızca çeviri\n• Her ikisi: iki satır da",
-      "ariaLabel": "{{scope}}: {{mode}} — değiştirmek için tıklayın"
+      "ariaLabel": "{{scope}}: {{mode}} — değiştirmek için tıklayın",
+      "none": "Off",
+      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
+      "legendSource": "Src: only the original speech",
+      "legendTranslation": "Trans: only the translation",
+      "legendBoth": "Both: both lines",
+      "legendNone": "Off: hide this side"
     },
     "playItemAudio": "Bu öğenin sesini oynat",
     "toolbar": {

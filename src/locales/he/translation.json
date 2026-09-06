@@ -565,8 +565,13 @@
       "both": "שניהם",
       "source": "מקור",
       "translation": "תרגום",
-      "tooltip": "{{scope}} — לחץ כדי לשנות\nמוצג כעת: {{mode}}\n• מקור: רק הדיבור המקורי\n• תרגום: רק התרגום\n• שניהם: שתי השורות",
-      "ariaLabel": "{{scope}}: {{mode}} — לחץ כדי לשנות"
+      "ariaLabel": "{{scope}}: {{mode}} — לחץ כדי לשנות",
+      "none": "Off",
+      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
+      "legendSource": "Src: only the original speech",
+      "legendTranslation": "Trans: only the translation",
+      "legendBoth": "Both: both lines",
+      "legendNone": "Off: hide this side"
     },
     "playItemAudio": "הפעל את השמע של פריט זה",
     "toolbar": {

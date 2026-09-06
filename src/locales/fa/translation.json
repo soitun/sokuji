@@ -565,8 +565,13 @@
       "both": "هر دو",
       "source": "اصلی",
       "translation": "ترجمه",
-      "tooltip": "{{scope}} — برای تغییر کلیک کنید\nاکنون نمایش: {{mode}}\n• اصلی: فقط گفتار اصلی\n• ترجمه: فقط ترجمه\n• هر دو: هر دو خط",
-      "ariaLabel": "{{scope}}: {{mode}} — برای تغییر کلیک کنید"
+      "ariaLabel": "{{scope}}: {{mode}} — برای تغییر کلیک کنید",
+      "none": "Off",
+      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
+      "legendSource": "Src: only the original speech",
+      "legendTranslation": "Trans: only the translation",
+      "legendBoth": "Both: both lines",
+      "legendNone": "Off: hide this side"
     },
     "playItemAudio": "پخش صوت این مورد",
     "toolbar": {

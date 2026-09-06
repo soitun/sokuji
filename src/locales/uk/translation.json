@@ -565,8 +565,13 @@
       "both": "Обидва",
       "source": "Оригінал",
       "translation": "Переклад",
-      "tooltip": "{{scope}} — натисніть, щоб змінити\nПоказано: {{mode}}\n• Оригінал: лише оригінальне мовлення\n• Переклад: лише переклад\n• Обидва: обидва рядки",
-      "ariaLabel": "{{scope}}: {{mode}} — натисніть, щоб змінити"
+      "ariaLabel": "{{scope}}: {{mode}} — натисніть, щоб змінити",
+      "none": "Off",
+      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
+      "legendSource": "Src: only the original speech",
+      "legendTranslation": "Trans: only the translation",
+      "legendBoth": "Both: both lines",
+      "legendNone": "Off: hide this side"
     },
     "playItemAudio": "Відтворити аудіо цього елемента",
     "toolbar": {

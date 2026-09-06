@@ -565,8 +565,13 @@
       "both": "Beide",
       "source": "Origineel",
       "translation": "Vertaling",
-      "tooltip": "{{scope}} — klik om te wijzigen\nWordt getoond: {{mode}}\n• Origineel: alleen originele spraak\n• Vertaling: alleen vertaling\n• Beide: beide regels",
-      "ariaLabel": "{{scope}}: {{mode}} — klik om te wijzigen"
+      "ariaLabel": "{{scope}}: {{mode}} — klik om te wijzigen",
+      "none": "Off",
+      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
+      "legendSource": "Src: only the original speech",
+      "legendTranslation": "Trans: only the translation",
+      "legendBoth": "Both: both lines",
+      "legendNone": "Off: hide this side"
     },
     "playItemAudio": "Audio van dit item afspelen",
     "toolbar": {

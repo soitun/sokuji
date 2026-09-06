@@ -565,8 +565,13 @@
       "both": "모두",
       "source": "원문",
       "translation": "번역",
-      "tooltip": "{{scope}} — 클릭하여 변경\n현재 표시: {{mode}}\n• 원문: 원본 음성만\n• 번역: 번역만\n• 모두: 두 줄 모두",
-      "ariaLabel": "{{scope}}: {{mode}} — 클릭하여 변경"
+      "ariaLabel": "{{scope}}: {{mode}} — 클릭하여 변경",
+      "none": "Off",
+      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
+      "legendSource": "Src: only the original speech",
+      "legendTranslation": "Trans: only the translation",
+      "legendBoth": "Both: both lines",
+      "legendNone": "Off: hide this side"
     },
     "playItemAudio": "이 항목의 오디오 재생",
     "toolbar": {

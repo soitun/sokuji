@@ -565,8 +565,13 @@
       "both": "Pareho",
       "source": "Orihinal",
       "translation": "Salin",
-      "tooltip": "{{scope}} — i-click para baguhin\nIpinapakita: {{mode}}\n• Orihinal: orihinal na pananalita lamang\n• Salin: salin lamang\n• Parehas: parehong linya",
-      "ariaLabel": "{{scope}}: {{mode}} — i-click para baguhin"
+      "ariaLabel": "{{scope}}: {{mode}} — i-click para baguhin",
+      "none": "Off",
+      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
+      "legendSource": "Src: only the original speech",
+      "legendTranslation": "Trans: only the translation",
+      "legendBoth": "Both: both lines",
+      "legendNone": "Off: hide this side"
     },
     "playItemAudio": "I-play ang audio ng item na ito",
     "toolbar": {

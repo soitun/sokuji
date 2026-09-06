@@ -565,8 +565,13 @@
       "both": "Båda",
       "source": "Källa",
       "translation": "Översättning",
-      "tooltip": "{{scope}} — klicka för att ändra\nVisar nu: {{mode}}\n• Källa: endast ursprungligt tal\n• Översättning: endast översättning\n• Båda: båda raderna",
-      "ariaLabel": "{{scope}}: {{mode}} — klicka för att ändra"
+      "ariaLabel": "{{scope}}: {{mode}} — klicka för att ändra",
+      "none": "Off",
+      "title": "{{scope}} — click to change\nNow showing: {{mode}}",
+      "legendSource": "Src: only the original speech",
+      "legendTranslation": "Trans: only the translation",
+      "legendBoth": "Both: both lines",
+      "legendNone": "Off: hide this side"
     },
     "playItemAudio": "Spela upp ljudet för detta objekt",
     "toolbar": {
