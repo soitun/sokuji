@@ -1,10 +1,14 @@
 import { usePostHog } from '../../shared/index';
 import { isDevelopment, getPlatform } from '../config/analytics';
+import type { DeviceProfile } from '../utils/deviceProfile';
 
 // Analytics event types - Comprehensive product metrics for Sokuji
 export interface AnalyticsEvents {
   // Application lifecycle
-  'app_startup': {}; // version and platform are now in Super Properties
+  // Version and platform are Super Properties; the device profile is not --
+  // it costs an async GPU probe, so it rides this once-per-launch event, and
+  // $set mirrors it onto the person so one lookup answers what a reporter runs.
+  'app_startup': Partial<DeviceProfile> & { $set?: Partial<DeviceProfile> };
   'app_shutdown': { session_duration: number };
   
   // Tour events (spec §2.3).
@@ -61,12 +65,6 @@ export interface AnalyticsEvents {
     device_name?: string;
     change_type: 'selected' | 'connected' | 'disconnected';
     during_session: boolean;
-  };
-  'audio_quality_metric': {
-    quality_score: number;
-    latency: number;
-    echo_cancellation_enabled: boolean;
-    noise_suppression_enabled: boolean;
   };
   'audio_passthrough_toggled': {
     enabled: boolean;
@@ -347,6 +345,25 @@ export async function syncDistinctIdToBackground(posthogInstance?: any): Promise
   }
 }
 
+/**
+ * Person traits for an identified user, with the address attached under both
+ * names PostHog uses.
+ *
+ * Both copies are added AFTER sanitisation on purpose: 'email' is in
+ * SENSITIVE_FIELDS, so a plain trait of that name would be stripped before it
+ * could leave. `$email` is what PostHog's user lookup reads; the unprefixed
+ * `email` is what the person list displays and filters on. With only `$email`
+ * set, a person falls back to whatever `name` holds -- which is how a reporter
+ * ended up unfindable by the address their bug report came from.
+ */
+export function buildIdentifyTraits(
+  sanitizedTraits: Record<string, any>,
+  email?: string,
+): Record<string, any> {
+  if (!email) return sanitizedTraits;
+  return { ...sanitizedTraits, email, $email: email };
+}
+
 // Custom hook for analytics
 export function useAnalytics() {
   const posthog = usePostHog();
@@ -381,12 +398,7 @@ export function useAnalytics() {
     try {
       if (posthog) {
         const sanitizedTraits = traits ? sanitizeData(traits) : {};
-        // $email is a special PostHog property for user identification
-        // It's intentionally not sanitized as it's meant for user lookup in PostHog
-        if (email) {
-          sanitizedTraits.$email = email;
-        }
-        posthog.identify(userId, sanitizedTraits);
+        posthog.identify(userId, buildIdentifyTraits(sanitizedTraits, email));
 
         // Sync distinct_id to background script after identifying user
         setTimeout(() => {

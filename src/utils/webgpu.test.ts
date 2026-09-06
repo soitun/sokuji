@@ -14,14 +14,14 @@ describe('checkWebGPU', () => {
   it('returns available=false when navigator.gpu is undefined', async () => {
     const { checkWebGPU } = await loadModule();
     const result = await checkWebGPU();
-    expect(result).toEqual({ available: false, features: [], softwareOnly: false });
+    expect(result).toEqual({ available: false, features: [], softwareOnly: false, adapterInfo: null });
   });
 
   it('returns available=false when requestAdapter returns null', async () => {
     vi.stubGlobal('navigator', { gpu: { requestAdapter: () => Promise.resolve(null) } });
     const { checkWebGPU } = await loadModule();
     const result = await checkWebGPU();
-    expect(result).toEqual({ available: false, features: [], softwareOnly: false });
+    expect(result).toEqual({ available: false, features: [], softwareOnly: false, adapterInfo: null });
   });
 
   it('returns available=true with empty features when no shader-f16', async () => {
@@ -29,7 +29,7 @@ describe('checkWebGPU', () => {
     vi.stubGlobal('navigator', { gpu: { requestAdapter: () => Promise.resolve(mockAdapter) } });
     const { checkWebGPU } = await loadModule();
     const result = await checkWebGPU();
-    expect(result).toEqual({ available: true, features: [], softwareOnly: false });
+    expect(result).toEqual({ available: true, features: [], softwareOnly: false, adapterInfo: null });
   });
 
   it('returns shader-f16 in features when adapter supports it', async () => {
@@ -37,7 +37,7 @@ describe('checkWebGPU', () => {
     vi.stubGlobal('navigator', { gpu: { requestAdapter: () => Promise.resolve(mockAdapter) } });
     const { checkWebGPU } = await loadModule();
     const result = await checkWebGPU();
-    expect(result).toEqual({ available: true, features: ['shader-f16'], softwareOnly: false });
+    expect(result).toEqual({ available: true, features: ['shader-f16'], softwareOnly: false, adapterInfo: null });
   });
 
   it('caches the result on subsequent calls', async () => {
@@ -63,7 +63,12 @@ describe('software adapter detection (issue #389)', () => {
     vi.stubGlobal('navigator', { gpu: { requestAdapter: () => Promise.resolve(mockAdapter) } });
     const { checkWebGPU } = await loadModule();
     const result = await checkWebGPU();
-    expect(result).toEqual({ available: true, features: [], softwareOnly: true });
+    expect(result).toEqual({
+      available: true,
+      features: [],
+      softwareOnly: true,
+      adapterInfo: { vendor: 'google', architecture: 'swiftshader' },
+    });
   });
 
   it('does not flag a real GPU', async () => {
@@ -97,9 +102,9 @@ describe('software adapter detection (issue #389)', () => {
 describe('isGpuAccelerationMissing', () => {
   it('is true when WebGPU is absent or software-backed, false on a real GPU', async () => {
     const { isGpuAccelerationMissing } = await loadModule();
-    expect(isGpuAccelerationMissing({ available: false, features: [], softwareOnly: false })).toBe(true);
-    expect(isGpuAccelerationMissing({ available: true, features: [], softwareOnly: true })).toBe(true);
-    expect(isGpuAccelerationMissing({ available: true, features: [], softwareOnly: false })).toBe(false);
+    expect(isGpuAccelerationMissing({ available: false, features: [], softwareOnly: false, adapterInfo: null })).toBe(true);
+    expect(isGpuAccelerationMissing({ available: true, features: [], softwareOnly: true, adapterInfo: null })).toBe(true);
+    expect(isGpuAccelerationMissing({ available: true, features: [], softwareOnly: false, adapterInfo: null })).toBe(false);
   });
 });
 
@@ -115,5 +120,38 @@ describe('getDeviceFeatures', () => {
     const { checkWebGPU, getDeviceFeatures } = await loadModule();
     await checkWebGPU();
     expect(getDeviceFeatures()).toEqual(['shader-f16']);
+  });
+});
+
+describe('getAdapterInfo', () => {
+  it('reports the adapter identity, dropping the fields Chromium leaves blank', async () => {
+    const mockAdapter = {
+      features: new Set(),
+      info: { vendor: 'intel', architecture: 'gen-12lp', device: '', description: 'Intel(R) UHD Graphics' },
+    };
+    vi.stubGlobal('navigator', { gpu: { requestAdapter: () => Promise.resolve(mockAdapter) } });
+    const { checkWebGPU, getAdapterInfo } = await loadModule();
+    await checkWebGPU();
+    expect(getAdapterInfo()).toEqual({
+      vendor: 'intel',
+      architecture: 'gen-12lp',
+      description: 'Intel(R) UHD Graphics',
+    });
+  });
+
+  it('is null before the probe runs, and on a Chromium too old to expose .info', async () => {
+    const { checkWebGPU, getAdapterInfo } = await loadModule();
+    expect(getAdapterInfo()).toBeNull();
+    vi.stubGlobal('navigator', { gpu: { requestAdapter: () => Promise.resolve({ features: new Set() }) } });
+    await checkWebGPU();
+    expect(getAdapterInfo()).toBeNull();
+  });
+
+  it('probes once when concurrent callers race at startup', async () => {
+    const requestAdapter = vi.fn().mockResolvedValue({ features: new Set() });
+    vi.stubGlobal('navigator', { gpu: { requestAdapter } });
+    const { checkWebGPU } = await loadModule();
+    await Promise.all([checkWebGPU(), checkWebGPU(), checkWebGPU()]);
+    expect(requestAdapter).toHaveBeenCalledTimes(1);
   });
 });
