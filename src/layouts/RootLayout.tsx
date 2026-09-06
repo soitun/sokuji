@@ -17,8 +17,10 @@ export function RootLayout() {
     // Track app startup - version, platform, environment are automatically
     // included via Super Properties. The device profile is not: it needs an
     // async GPU probe, so the event goes out once that resolves. A launch is
-    // not a latency measurement, so waiting costs nothing, and a profile that
-    // could not be built still sends the event rather than dropping it.
+    // not a latency measurement, so waiting costs nothing, and the event is
+    // never dropped on the profile's account -- collectDeviceProfile() bounds
+    // itself and resolves empty rather than hanging, and a rejection here still
+    // reports the launch.
     collectDeviceProfile()
       .catch(() => ({}))
       .then(profile => {

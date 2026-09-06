@@ -23,6 +23,15 @@ export interface DeviceProfile {
   os_name?: string;
 }
 
+/**
+ * How long the probe gets before the launch is reported without it.
+ * `requestAdapter()` is not guaranteed to settle -- a wedged GPU driver is
+ * exactly the condition this telemetry exists to catch, so it must not be the
+ * condition that silences it. Before this event carried a profile it was sent
+ * unconditionally on mount, and that reliability is worth keeping.
+ */
+const PROBE_TIMEOUT_MS = 5000;
+
 /** Windows 11's first build. Below it, the same "10.0" major means Windows 10. */
 const WINDOWS_11_MIN_BUILD = 22000;
 
@@ -118,7 +127,19 @@ async function readOs(): Promise<OsFields> {
   return {};
 }
 
-export async function collectDeviceProfile(): Promise<DeviceProfile> {
+/**
+ * Resolves to `{}` rather than hanging when the probe does not settle. An empty
+ * profile reads the same as one that found nothing: absence means "we could not
+ * find out", so no caller needs a separate timeout case.
+ */
+export function collectDeviceProfile(timeoutMs = PROBE_TIMEOUT_MS): Promise<Partial<DeviceProfile>> {
+  return Promise.race([
+    buildProfile(),
+    new Promise<Partial<DeviceProfile>>(resolve => setTimeout(() => resolve({}), timeoutMs)),
+  ]);
+}
+
+async function buildProfile(): Promise<DeviceProfile> {
   const [gpu, os] = await Promise.all([checkWebGPU(), readOs()]);
   const adapter = gpu.adapterInfo ?? {};
   return {

@@ -85,6 +85,35 @@ describe('collectDeviceProfile — GPU', () => {
   });
 });
 
+describe('collectDeviceProfile — the probe cannot silence the event', () => {
+  it('gives up and resolves empty when requestAdapter never settles', async () => {
+    vi.useFakeTimers();
+    try {
+      // A wedged GPU driver is the condition this telemetry exists to catch, so
+      // it must not be the condition that stops the launch being reported.
+      stubBrowser({ gpu: { requestAdapter: () => new Promise(() => {}) } });
+      const { collectDeviceProfile } = await loadModule();
+      const pending = collectDeviceProfile(5000);
+      await vi.advanceTimersByTimeAsync(5000);
+      expect(await pending).toEqual({});
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it('does not wait out the timeout when the probe answers', async () => {
+    vi.useFakeTimers();
+    try {
+      stubBrowser({ gpu: { requestAdapter: () => Promise.resolve({ features: new Set() }) } });
+      const { collectDeviceProfile } = await loadModule();
+      // No timer advance: a resolved probe must win the race on its own.
+      expect(await collectDeviceProfile(5000)).toMatchObject({ webgpu_available: true });
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+});
+
 describe('collectDeviceProfile — OS version in Electron', () => {
   // Measured on Electron 40.8.5: navigator.userAgentData is undefined and
   // require('os') throws in the sandboxed preload, so process.getSystemVersion()
